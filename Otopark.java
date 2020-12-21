@@ -11,7 +11,7 @@ public class Otopark{
 	public static Otopark izmirOtopark =  new  Otopark();
 	
 	LocalDateTime currentDate = LocalDateTime.now();
-	private ArrayList<Araba> KayıtlıArabalar = new ArrayList<Araba>();
+	private ArrayList<Araba> KayÃ½tlÃ½Arabalar = new ArrayList<Araba>();
 	private int  Ucret = 15;
 	
 	public static void main(String[] args) 
@@ -27,12 +27,12 @@ public class Otopark{
         
 	}
 
-	public ArrayList<Araba> getKayıtlıArabalar() {
-		return KayıtlıArabalar;
+	public ArrayList<Araba> getKayÃ½tlÃ½Arabalar() {
+		return KayÃ½tlÃ½Arabalar;
 	}
 
-	public void setKayıtlıArabalar(ArrayList<Araba> KayıtlıArabalar) {
-		this.KayıtlıArabalar = KayıtlıArabalar;
+	public void setKayÃ½tlÃ½Arabalar(ArrayList<Araba> KayÃ½tlÃ½Arabalar) {
+		this.KayÃ½tlÃ½Arabalar = KayÃ½tlÃ½Arabalar;
 	}
 
 	public int getUcret() {
@@ -46,16 +46,16 @@ public class Otopark{
         
         void arabaCikisi(Araba araba) {
         	
-        KayıtlıArabalar.remove(araba);
-        araba.setCikisZamanı(currentDate);
-        long süre = Duration.between(araba.getCikisZamanı(),araba.getGirisZamanı()).getSeconds();
-        System.out.println("Kalış süreniz"+süre+"saniye\n Ücretiniz="+süre*Ucret);	
+        KayÃ½tlÃ½Arabalar.remove(araba);
+        araba.setCikisZamanÃ½(LocalDateTime.now());
+        long sÃ¼re = Duration.between(araba.getCikisZamanÃ½(),araba.getGirisZamanÃ½()).getSeconds();
+        System.out.println("KalÃ½Ã¾ sÃ¼reniz"+sÃ¼re+"saniye\n Ãœcretiniz="+sÃ¼re*Ucret);	
         	
         }
         
         void arabaGiris(String araba) {
         Araba Girenaraba = new Araba (araba);
-        Girenaraba.setArabaOtoparkı(this);
+        Girenaraba.setArabaOtoparkÃ½(this);
         System.out.println(Girenaraba.toString());
         	
         	
@@ -97,7 +97,7 @@ public class Otopark{
         
          Araba FindAraba(String InputName)
          {
-        	 for(Araba a :KayıtlıArabalar )
+        	 for(Araba a :KayÃ½tlÃ½Arabalar )
         	 {
         		 if(a.getName().equals(InputName))
         			 return a;
